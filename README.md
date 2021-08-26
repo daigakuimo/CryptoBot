@@ -1,5 +1,5 @@
 # 仮想通貨BOT
-テクニカル分析を用いてBOTで利益を出すことを目標する
+テクニカル分析を用いてBOTで利益を出すことを目標とする
 
 ## 環境
 |  Name  |  Version  |
@@ -19,4 +19,4 @@ ACCESS_KEY = "ここに自分のCoinCheckのアクセスキーを書く"
 SECRET_KEY = "ここに自分のCoinCheckのシークレットアクセスキーを書く"
 ```
 
-config.envはgitignoreされてるのでアクセスキーが外に漏れない
+config.envはgitignoreされてるのでアクセスキーが外に漏れない心配はない
