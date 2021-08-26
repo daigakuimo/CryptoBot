@@ -20,3 +20,7 @@ SECRET_KEY = "ここに自分のCoinCheckのシークレットアクセスキー
 ```
 
 config.envはgitignoreされてるのでアクセスキーが外に漏れない心配はない
+
+
+## 参考資料
+[Pythonでcoincheck APIを使ってみる。 ~自動取引プログラム作成に向けて~](https://qiita.com/ti-ginkgo/items/7e15bdac6618c07534be#%E6%9D%BF%E6%83%85%E5%A0%B1-get)
