@@ -9,6 +9,7 @@
 
 ## アクセスキーの設定
 ex_config.envをコピーしてconfig.envを作る
+
 config.env内に以下を記入
 ```
 # アクセスキー
