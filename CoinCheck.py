@@ -67,3 +67,10 @@ class CoinCheck:
         }
 
         return headers
+
+    # 総資産
+    def getBalance(self):
+        path_balance = '/api/accounts/balance'
+        result = self.get(path_balance)
+        return result
+    

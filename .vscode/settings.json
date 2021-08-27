@@ -12,6 +12,11 @@
         "phu",
         "pyenv",
         "vct",
+        "websocket",
         "zzjzv"
-    ]
+    ],
+    "python.analysis.extraPaths": [
+        "DoNotTouchThisFolder"
+    ],
+    "python.jediEnabled": false
 }
