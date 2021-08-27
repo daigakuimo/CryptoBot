@@ -19,7 +19,7 @@ ACCESS_KEY = "ここに自分のCoinCheckのアクセスキーを書く"
 SECRET_KEY = "ここに自分のCoinCheckのシークレットアクセスキーを書く"
 ```
 
-config.envはgitignoreされてるのでアクセスキーが外に漏れない心配はない
+config.envはgitignoreされてるのでアクセスキーが外に漏れる心配はない
 
 
 ## 参考資料
