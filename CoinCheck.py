@@ -68,9 +68,106 @@ class CoinCheck:
 
         return headers
 
+    # 各種最新情報
+    def getTicker(self):
+        URL = 'https://coincheck.com/api/ticker'
+        ticker = requests.get(URL).json() 
+        return ticker
+
     # 総資産
     def getBalance(self):
         path_balance = '/api/accounts/balance'
         result = self.get(path_balance)
         return result
     
+    # 最新の取引履歴
+    def getTrades(self, offset):
+        URL = 'https://coincheck.com/api/trades'
+        trades = requests.get(URL, params={"offset": 20}).json() 
+        return trades
+
+    # 板情報取得
+    def getOrderBook(self):
+        URL = 'https://coincheck.com/api/order_books'
+        order_book = requests.get(URL).json() 
+        return order_book
+
+    """
+    レート算出
+    Args:
+        order_type(string): sell or buy
+        pair(string): only 'btc_jpy' now
+        amount_or_price(string): 'amount' or 'price'
+        value(float): num
+    """
+    def getOrdersRate(self, order_type, pair, amount_or_price, value):
+        URL = 'https://coincheck.com/api/exchange/orders/rate'
+        params = {'order_type': order_type, 'pair': pair, amount_or_price: value}
+        orders_rate = requests.get(URL, params=params).json() 
+        return orders_rate
+    
+    """
+    新規注文：指値
+    Args:
+        pair(string): only 'btc_jpy' now
+        order_type(string): sell or buy
+        rate(float)
+        amount(float)
+    """
+    def NewOrderForLimitPrice(self, pair, order_type, rate, amount):
+        path_orders = '/api/exchange/orders'
+        params = {
+            "pair": pair,
+            "order_type": order_type,
+            "rate": rate,
+            "amount": amount,
+        }
+        result = self.post(path_orders, params)
+        return result
+
+    """
+    新規注文：成行
+    Args:
+        pair(string): only 'btc_jpy' now
+        order_type(string): 'market_buy' or 'market_sell'
+        amount(float)
+    """
+    def NewOrderForMarket(self, pair, order_type, amount):
+        path_orders = '/api/exchange/orders'
+        param = {}
+        if(order_type == "market_buy"):
+            params = {
+                "pair": pair,
+                "order_type": order_type,
+                "market_buy_amount": amount,
+            }
+        else:
+            params = {
+                "pair": pair,
+                "order_type": order_type,
+                "amount": amount,
+            }
+        result = self.post(path_orders, params)
+        return result
+
+    # 未決済の注文一覧
+    def getOrdersOpen(self):
+        path_orders_opens = '/api/exchange/orders/opens'
+        result = self.get(path_orders_opens)
+        return result
+    
+    # 注文のキャンセル
+    def deleteOrder(self, id):
+        path_orders_cancel = '/api/exchange/orders/[id]'
+        result = self.delete(path_orders_cancel)
+        return result
+
+    # ビットコインを送金
+    def sendBTC(self, address, amount):
+        path_send_money = '/api/send_money'
+        params = {
+            "address": address,
+            "amount": amount
+        }
+        result = self.post(path_send_money, params)
+        return result

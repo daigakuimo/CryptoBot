@@ -5,22 +5,21 @@ import CoinCheck
 import config
 from websocket import create_connection
 
-# access_key = config.ACCESS_KEY
-# secret_key = config.SECRET_KEY
+access_key = config.ACCESS_KEY
+secret_key = config.SECRET_KEY
 
-# coincheck = CoinCheck.CoinCheck(access_key,secret_key)
+coincheck = CoinCheck.CoinCheck(access_key,secret_key)
 
-# path_balance = '/api/accounts/balance'
-# result = coincheck.get(path_balance)
-# print(result)
+result = coincheck.getOrdersRate("sell", "btc_jpy", "amount", 0.00001)
+print(result)
 
 
-ws = create_connection("wss://ws-api.coincheck.com/")
+# ws = create_connection("wss://ws-api.coincheck.com/")
 
-ws.send(json.dumps({
-   "type": "subscribe",
-   "channel": "btc_jpy-orderbook"
-}))
+# ws.send(json.dumps({
+#    "type": "subscribe",
+#    "channel": "btc_jpy-orderbook"
+# }))
 
-while True:
-   print (ws.recv())
+# while True:
+#    print (ws.recv())
