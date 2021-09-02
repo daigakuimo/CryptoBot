@@ -81,9 +81,9 @@ class CoinCheck:
         return result
     
     # 最新の取引履歴
-    def getTrades(self, offset):
+    def getTrades(self, pair):
         URL = 'https://coincheck.com/api/trades'
-        trades = requests.get(URL, params={"offset": 20}).json() 
+        trades = requests.get(URL, params={"pair": pair}).json() 
         return trades
 
     # 板情報取得
@@ -160,6 +160,18 @@ class CoinCheck:
     def deleteOrder(self, id):
         path_orders_cancel = '/api/exchange/orders/[id]'
         result = self.delete(path_orders_cancel)
+        return result
+
+    # 自分の最新の取引履歴
+    def getTransactions(self):
+        path = '/api/exchange/orders/transactions'
+        result = self.get(path)
+        return result
+
+    # 最新の取引履歴
+    def getTransactionsPagination(self):
+        path = '/api/exchange/orders/transactions_pagination'
+        result = self.get(path)
         return result
 
     # ビットコインを送金

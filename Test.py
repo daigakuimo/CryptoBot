@@ -10,7 +10,7 @@ secret_key = config.SECRET_KEY
 
 coincheck = CoinCheck.CoinCheck(access_key,secret_key)
 
-result = coincheck.getOrdersRate("sell", "btc_jpy", "amount", 0.00001)
+result = coincheck.getTransactionsPagination()
 print(result)
 
 
