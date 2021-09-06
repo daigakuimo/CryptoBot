@@ -5,8 +5,10 @@ import CoinCheck
 import config
 from websocket import create_connection
 
-access_key = config.ACCESS_KEY
-secret_key = config.SECRET_KEY
+
+
+access_key = config.COINCHECK_ACCESS_KEY
+secret_key = config.COINCHECK_SECRET_KEY
 
 coincheck = CoinCheck.CoinCheck(access_key,secret_key)
 
