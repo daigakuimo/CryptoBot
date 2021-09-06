@@ -67,3 +67,10 @@ class GMO:
         }
 
         return headers
+
+     # 各種最新情報
+    def getTicker(self):
+        path = '/public/v1/ticker?symbol=BTC'
+        result = self.get(path)
+        return result
+

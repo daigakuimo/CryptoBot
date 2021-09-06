@@ -2,18 +2,25 @@
 import requests
 import json
 import CoinCheck
+import GMO
 import config
 from websocket import create_connection
 
 
 
-access_key = config.COINCHECK_ACCESS_KEY
-secret_key = config.COINCHECK_SECRET_KEY
+access_key = config.GMO_ACCESS_KEY
+secret_key = config.GMO_SECRET_KEY
 
-coincheck = CoinCheck.CoinCheck(access_key,secret_key)
+gmo = GMO.GMO(secret_key, secret_key)
 
-result = coincheck.getTransactionsPagination()
+result = gmo.getTicker()
 print(result)
+
+
+# coincheck = CoinCheck.CoinCheck(access_key,secret_key)
+
+# result = coincheck.getTransactionsPagination()
+# print(result)
 
 
 # ws = create_connection("wss://ws-api.coincheck.com/")
