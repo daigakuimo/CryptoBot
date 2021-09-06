@@ -3,6 +3,20 @@ import requests
 import time
 import hmac
 import hashlib
+from enum import Enum
+
+
+class GMO_COIN_SYMBOL(Enum):
+    BTC= 1
+    ETH = 2
+    LTC = 3
+    BCH = 4
+    XRP = 5
+    BTC_JPY = 6
+    ETH_JPY = 7
+    BCH_JPY = 8
+    LTC_JPY = 9
+    XRP_JPY = 10
 
 class GMO:
     def __init__(self, access_key, secret_key, url='https://api.coin.z.com'):
@@ -69,8 +83,10 @@ class GMO:
         return headers
 
      # 各種最新情報
-    def getTicker(self):
-        path = '/public/v1/ticker?symbol=BTC'
+    def getTicker(self, symbol):
+        path = f'/public/v1/ticker?symbol={symbol}'
+        print(path)
         result = self.get(path)
         return result
+
 

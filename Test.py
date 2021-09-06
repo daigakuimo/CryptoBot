@@ -13,7 +13,7 @@ secret_key = config.GMO_SECRET_KEY
 
 gmo = GMO.GMO(secret_key, secret_key)
 
-result = gmo.getTicker()
+result = gmo.getTicker(GMO.GMO_COIN_SYMBOL.XRP.name)
 print(result)
 
 
