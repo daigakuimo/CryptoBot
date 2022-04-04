@@ -1,5 +1,5 @@
 # 仮想通貨BOT
-テクニカル分析を用いてBOTで利益を出すことを目標とする
+DEXへの上場やロック解除を監視して取引してくれるBOT
 
 ## 環境
 |  Name  |  Version  |
@@ -7,22 +7,22 @@
 |  Mac OS  |         |
 |  Python  |  3.7.5  |
 
-## アクセスキーの設定
-ex_config.envをコピーしてconfig.envを作る
+## configの設定
+ex_config.envをもとにconfig.envを作成
 
-config.env内に以下を記入
-```
-# アクセスキー
-ACCESS_KEY = "ここに自分のCoinCheckのアクセスキーを書く"
+wallet_A = "*** メタマスクのアドレス ***"
+key_A = "*** メタマスクの秘密鍵 ***"
 
-# シークレットキー
-SECRET_KEY = "ここに自分のCoinCheckのシークレットアクセスキーを書く"
-```
+## 使い方
+1.上記のconfigの設定を行う
 
-config.envはgitignoreされてるのでアクセスキーが外に漏れる心配はない
+2.Approve.pyで取引したいトークンをapproveする
 
+3.上場戦ならBSCFairTradeまたはHarmonyFairTradeで狙っているトークンのアドレスを入力して実行
 
 ## 参考資料
+[納豆男爵のDeFi Bot作り①~⑤](https://note.com/natto_baron/n/nc5fe180b2e2e)
+
 [Pythonでcoincheck APIを使ってみる。 自動取引プログラム作成に向けて](https://qiita.com/ti-ginkgo/items/7e15bdac6618c07534be#%E6%9D%BF%E6%83%85%E5%A0%B1-get)
 
 [PythonからcoincheckのWebsocketAPIに接続する](https://qiita.com/flowphantom/items/f3e1f82cd6017028da26)

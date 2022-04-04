@@ -1,0 +1,409 @@
+[
+    {
+        "stateMutability": "nonpayable",
+        "inputs": [],
+        "type": "constructor"
+    },
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "type": "address",
+                "name": "owner",
+                "internalType": "address"
+            },
+            {
+                "type": "address",
+                "internalType": "address",
+                "indexed": true,
+                "name": "spender"
+            },
+            {
+                "type": "uint256",
+                "name": "value",
+                "indexed": false,
+                "internalType": "uint256"
+            }
+        ],
+        "type": "event",
+        "name": "Approval"
+    },
+    {
+        "type": "event",
+        "inputs": [
+            {
+                "name": "previousOwner",
+                "type": "address",
+                "indexed": true,
+                "internalType": "address"
+            },
+            {
+                "type": "address",
+                "internalType": "address",
+                "name": "newOwner",
+                "indexed": true
+            }
+        ],
+        "anonymous": false,
+        "name": "OwnershipTransferred"
+    },
+    {
+        "name": "Transfer",
+        "type": "event",
+        "inputs": [
+            {
+                "indexed": true,
+                "type": "address",
+                "internalType": "address",
+                "name": "from"
+            },
+            {
+                "name": "to",
+                "indexed": true,
+                "type": "address",
+                "internalType": "address"
+            },
+            {
+                "name": "value",
+                "type": "uint256",
+                "internalType": "uint256",
+                "indexed": false
+            }
+        ],
+        "anonymous": false
+    },
+    {
+        "name": "MAX_SUPPLY",
+        "type": "function",
+        "stateMutability": "view",
+        "inputs": [],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "constant": true,
+        "signature": "0x32cb6b0c"
+    },
+    {
+        "name": "admins",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "",
+                "internalType": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function",
+        "outputs": [
+            {
+                "name": "",
+                "type": "bool",
+                "internalType": "bool"
+            }
+        ]
+    },
+    {
+        "stateMutability": "view",
+        "name": "allowance",
+        "type": "function",
+        "inputs": [
+            {
+                "name": "owner",
+                "type": "address",
+                "internalType": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ]
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+            },
+            {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "bool",
+                "internalType": "bool",
+                "name": ""
+            }
+        ],
+        "name": "approve",
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "name": "balanceOf",
+        "stateMutability": "view",
+        "outputs": [
+            {
+                "name": "",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "inputs": [
+            {
+                "internalType": "address",
+                "type": "address",
+                "name": "account"
+            }
+        ],
+        "type": "function"
+    },
+    {
+        "type": "function",
+        "name": "decimals",
+        "outputs": [
+            {
+                "type": "uint8",
+                "internalType": "uint8",
+                "name": ""
+            }
+        ],
+        "inputs": [],
+        "stateMutability": "view",
+        "constant": true,
+        "signature": "0x313ce567"
+    },
+    {
+        "name": "decreaseAllowance",
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "spender",
+                "type": "address"
+            },
+            {
+                "name": "subtractedValue",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    },
+    {
+        "outputs": [
+            {
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }
+        ],
+        "type": "function",
+        "inputs": [
+            {
+                "name": "spender",
+                "internalType": "address",
+                "type": "address"
+            },
+            {
+                "type": "uint256",
+                "internalType": "uint256",
+                "name": "addedValue"
+            }
+        ],
+        "name": "increaseAllowance",
+        "stateMutability": "nonpayable"
+    },
+    {
+        "name": "name",
+        "type": "function",
+        "outputs": [
+            {
+                "internalType": "string",
+                "type": "string",
+                "name": ""
+            }
+        ],
+        "inputs": [],
+        "stateMutability": "view",
+        "constant": true,
+        "signature": "0x06fdde03"
+    },
+    {
+        "type": "function",
+        "stateMutability": "view",
+        "name": "owner",
+        "inputs": [],
+        "outputs": [
+            {
+                "internalType": "address",
+                "type": "address",
+                "name": ""
+            }
+        ],
+        "constant": true,
+        "signature": "0x8da5cb5b"
+    },
+    {
+        "name": "renounceOwnership",
+        "inputs": [],
+        "stateMutability": "nonpayable",
+        "outputs": [],
+        "type": "function"
+    },
+    {
+        "type": "function",
+        "name": "symbol",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "stateMutability": "view",
+        "inputs": [],
+        "constant": true,
+        "signature": "0x95d89b41"
+    },
+    {
+        "stateMutability": "view",
+        "inputs": [],
+        "type": "function",
+        "name": "totalSupply",
+        "outputs": [
+            {
+                "type": "uint256",
+                "name": "",
+                "internalType": "uint256"
+            }
+        ],
+        "constant": true,
+        "signature": "0x18160ddd"
+    },
+    {
+        "stateMutability": "nonpayable",
+        "name": "transfer",
+        "type": "function",
+        "inputs": [
+            {
+                "name": "recipient",
+                "internalType": "address",
+                "type": "address"
+            },
+            {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "outputs": [
+            {
+                "type": "bool",
+                "name": "",
+                "internalType": "bool"
+            }
+        ]
+    },
+    {
+        "type": "function",
+        "outputs": [
+            {
+                "type": "bool",
+                "name": "",
+                "internalType": "bool"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "name": "transferFrom",
+        "inputs": [
+            {
+                "name": "sender",
+                "internalType": "address",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
+                "name": "recipient",
+                "type": "address"
+            },
+            {
+                "name": "amount",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ]
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "type": "address",
+                "name": "newOwner"
+            }
+        ],
+        "type": "function",
+        "stateMutability": "nonpayable",
+        "outputs": [],
+        "name": "transferOwnership"
+    },
+    {
+        "stateMutability": "nonpayable",
+        "name": "setAdmin",
+        "inputs": [
+            {
+                "type": "address",
+                "name": "_address",
+                "internalType": "address"
+            },
+            {
+                "type": "bool",
+                "internalType": "bool",
+                "name": "_isAdmin"
+            }
+        ],
+        "type": "function",
+        "outputs": []
+    },
+    {
+        "outputs": [],
+        "inputs": [
+            {
+                "type": "address",
+                "name": "_receiver",
+                "internalType": "address"
+            },
+            {
+                "name": "_amount",
+                "type": "uint256",
+                "internalType": "uint256"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "name": "mint",
+        "type": "function"
+    }
+]

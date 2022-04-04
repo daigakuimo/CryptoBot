@@ -13,3 +13,8 @@ COINCHECK_SECRET_KEY = os.getenv('COINCHECK_SECRET_KEY')
 # 環境変数を参照
 GMO_ACCESS_KEY = os.getenv('GMO_ACCESS_KEY')
 GMO_SECRET_KEY = os.getenv('GMO_SECRET_KEY')
+
+# 環境変数を参照
+WALLET_A = os.getenv('wallet_A')
+WALLET_B = os.getenv('wallet_B')
+KEY_A = os.getenv('key_A')
