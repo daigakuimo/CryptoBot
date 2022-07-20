@@ -17,9 +17,11 @@ key_A = "*** メタマスクの秘密鍵 ***"
 ## 使い方
 1.上記のconfigの設定を行う
 
-2.Approve.pyで取引したいトークンをapproveする
+2.ABIファイルを取得して保存
 
-3.上場戦ならBSCFairTradeまたはHarmonyFairTradeで狙っているトークンのアドレスを入力して実行
+3.Approve.pyで取引したいトークンをapproveする
+
+4.上場戦ならBSCFairTradeまたはHarmonyFairTradeで狙っているトークンのアドレスを入力して実行
 
 ## 参考資料
 [納豆男爵のDeFi Bot作り①~⑤](https://note.com/natto_baron/n/nc5fe180b2e2e)
